@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  sentinel-dev:
+    build:
+      context: v1.5.0
+      dockerfile: Dockerfile
+    container_name: sentinel-dev
+    restart: always
+    ports:
+    - 18080:8080

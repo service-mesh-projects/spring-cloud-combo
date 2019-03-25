@@ -1,0 +1,11 @@
+
+spring:
+  application:
+    name: consumer-app
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+debug: true
+server:
+  port: 8081

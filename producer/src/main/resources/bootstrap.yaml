@@ -1,0 +1,24 @@
+# 必须开启, 默认是关闭状态
+feign:
+  hystrix:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+spring:
+  cloud:
+    consul:
+      host: register.hocgin.dev
+      port: 8500
+      discovery:
+        register: true
+        enabled: true
+        deregister: true
+        prefer-ip-address: true
+        tags: version=1.0,author=hocgin
+        health-check-path: /actuator/health
+        health-check-interval: 5s
+        instance-id: ${spring.application.name:unknow}:${random.value}
+        service-name: ${spring.application.name:unknow}
