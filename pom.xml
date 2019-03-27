@@ -11,8 +11,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>consumer</module>
-        <module>producer</module>
         <module>services</module>
         <module>gateway</module>
     </modules>
