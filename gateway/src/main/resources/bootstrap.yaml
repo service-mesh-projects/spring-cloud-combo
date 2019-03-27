@@ -1,19 +1,28 @@
 spring:
   cloud:
-    consul:
-      host: register.hocgin.dev
-      port: 8500
-      discovery:
-        register: true
-        enabled: true
-        deregister: true
-        prefer-ip-address: true
-        tags: version=1.0,author=hocgin
-        health-check-path: /actuator/health
-        health-check-interval: 5s
-        instance-id: ${spring.application.name:unknow}:${random.value}
-        service-name: ${spring.application.name:unknow}
+#    consul:
+#      host: register.hocgin.dev
+#      port: 8500
+#      discovery:
+#        register: true
+#        enabled: true
+#        deregister: true
+#        prefer-ip-address: true
+#        tags: version=1.0,author=hocgin
+#        health-check-path: /actuator/health
+#        health-check-interval: 5s
+#        instance-id: ${spring.application.name:unknow}:${random.value}
+#        service-name: ${spring.application.name:unknow}
     gateway:
       discovery:
         locator:
           enabled: true
+    sentinel:
+      transport:
+        dashboard: sentinel.hocgin.dev:18080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: *
